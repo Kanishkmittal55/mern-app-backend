@@ -1,5 +1,6 @@
 const express = require("express");
 const colors = require("colors");
+var cors = require("cors");
 
 const dotenv = require("dotenv").config();
 const { errorHandler } = require("./middleware/errorMiddleware");
@@ -11,6 +12,8 @@ const app = express();
 
 app.use(express.json()); // In express we have body parser for raw json
 app.use(express.urlencoded({ extended: false }));
+
+app.use(cors());
 
 // Mounting the Routers
 
